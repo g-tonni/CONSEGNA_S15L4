@@ -20,7 +20,7 @@ public class Application {
 
         EntityManager entityManager = emf.createEntityManager();
 
-        System.out.println("Ciao");
+        System.out.println("Cia");
 /*
         EventiDAO ed = new EventiDAO(entityManager);
         PersoneDAO perd = new PersoneDAO(entityManager);

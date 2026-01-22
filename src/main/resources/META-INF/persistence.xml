@@ -10,6 +10,9 @@
         <class>giada_tonni.entities.Location</class>
         <class>giada_tonni.entities.Partecipazione</class>
         <class>giada_tonni.entities.Persona</class>
+        <class>giada_tonni.entities.PartitaDiCalcio</class>
+        <class>giada_tonni.entities.GaraDiAtletica</class>
+        <class>giada_tonni.entities.Concerto</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:postgresql://localhost:5432/consegnas15l4"/>

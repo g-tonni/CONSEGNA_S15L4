@@ -20,8 +20,6 @@ public class Application {
 
         EntityManager entityManager = emf.createEntityManager();
 
-        System.out.println("Ciao");
-/*
         EventiDAO ed = new EventiDAO(entityManager);
         PersoneDAO perd = new PersoneDAO(entityManager);
         LocationsDAO ld = new LocationsDAO(entityManager);
@@ -29,39 +27,48 @@ public class Application {
 
         LocalDate d1 = LocalDate.of(2026, 2, 1);
 
-        Location l1 = new Location("Villa bellissima", "Roma");
-        Location l2 = new Location("Villa antica", "Firenze");
-        Location l3 = new Location("Villa con piscina", "Napoli");
-       */
-/* ld.save(l1);
-        ld.save(l2);
-        ld.save(l3);*//*
+        Location stadio1 = new Location("Stadio Olimpico", "Roma");
+        Location stadio2 = new Location("San Siro", "Milano");
+        Location campo1 = new Location("Campo atletico", "Firenze");
+        Location campo2 = new Location("Campo atletico 2", "Napoli");
+        Location atlantico = new Location("Atlantico", "Roma");
+        Location palalottomatica = new Location("Palalottomatica", "Roma");
+/*        ld.save(stadio1);
+        ld.save(stadio2);
+        ld.save(campo1);
+        ld.save(campo2);
+        ld.save(atlantico);
+        ld.save(palalottomatica);*/
 
+        try {
+            Location stadioTrovato1 = ld.findLocationById("0f764d37-057d-44b7-a4d8-9fd662b81f34");
+            Location stadioTrovato2 = ld.findLocationById("f4436c1a-c0b5-4941-8995-ac55844037df");
+            Location campoTrovato1 = ld.findLocationById("61f368fc-b9e7-424e-a7b2-b972b971be1e");
+            Location campoTrovato2 = ld.findLocationById("4d353b10-25d1-442e-ae9b-c3e13051c875");
+            Location atlanticoTrovato = ld.findLocationById("f4db3b5d-b7cb-4efc-ab51-a6d8f76939f4");
+            Location palaTrovato = ld.findLocationById("6e24b1c5-aff8-4ada-b796-ae7a08e3754e");
 
-        */
-/*try {
-            Location locationTrovata1 = ld.findLocationById("376d1984-c758-4807-a408-a8df38db5997");
-            Location locationTrovata2 = ld.findLocationById("c7a58577-b426-49e1-8ca8-91a882265473");
-            Location locationTrovata3 = ld.findLocationById("d37ff236-4a0f-4b42-9560-a65d77d144a2");
-            Evento e1 = new Evento("Matrimonio", d1, "Un bellissimo matrimonio", TipoEvento.PRIVATO, 300, locationTrovata1);
-            Evento e2 = new Evento("Anniversario", d1, "Anniversario stupendo", TipoEvento.PUBBLICO, 500, locationTrovata2);
-            Evento e3 = new Evento("Comunione", d1, "Comunione speciale", TipoEvento.PRIVATO, 200, locationTrovata3);
-            ed.save(e1);
-            ed.save(e2);
-            ed.save(e3);
+            PartitaDiCalcio partita1 = new PartitaDiCalcio("Roma-Juve", d1, "Bellissima partita", TipoEvento.PRIVATO, 300, stadioTrovato1, "Roma", "Juve", 2, 4);
+            PartitaDiCalcio partita2 = new PartitaDiCalcio("Milan-Napoli", d1, "Bellissima partita milanese", TipoEvento.PUBBLICO, 500, stadioTrovato2, "Milan", "Napoli", 3, 2);
+            // GaraDiAtletica e3 = new GaraDiAtletica("Ginnastica Artistica", d1, "Bravissime ginnaste", TipoEvento.PRIVATO, 200, campoTrovato1, );
+            // GaraDiAtletica e4 = new GaraDiAtletica("Corsa", d1, "Bravissimi atleti", TipoEvento.PRIVATO, 200, campoTrovato2);
+            Concerto concerto1 = new Concerto("Salmo", d1, "Concerto stupendo", TipoEvento.PRIVATO, 200, atlanticoTrovato, Genere.POP, true);
+            Concerto concerto2 = new Concerto("Ligabue", d1, "Concerto molto bello", TipoEvento.PRIVATO, 200, palaTrovato, Genere.POP, false);
+        /*    ed.save(partita1);
+            ed.save(partita2);
+            ed.save(concerto1);
+            ed.save(concerto2);*/
         } catch (NotFoundException ex){
             System.out.println(ex.getMessage());
-        }*//*
+        }
 
-
-
+/*
         Persona p1 = new Persona("Giada", "Tonni", "gtonni@gmail.com", Sesso.F);
         Persona p2 = new Persona("Mario", "Rossi", "mrossi@gmail.com", Sesso.M);
         Persona p3 = new Persona("Luigi", "Bianchi", "lbianchi@gmail.com", Sesso.M);
-        */
-/* perd.save(p1);
+        perd.save(p1);
         perd.save(p2);
-        perd.save(p3);*//*
+        perd.save(p3);
 
 
         try {
@@ -74,8 +81,8 @@ public class Application {
         } catch (NotFoundException ex){
             System.out.println(ex.getMessage());
         }
-*/
 
+*/
 
 
         emf.close();

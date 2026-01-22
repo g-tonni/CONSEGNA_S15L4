@@ -1,9 +1,6 @@
 package giada_tonni.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -11,6 +8,7 @@ import java.time.LocalDate;
 public class Concerto extends Evento {
 
     @Column(name = "genere", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Genere genere;
 
     @Column(name = "in_streaming", nullable = false)
